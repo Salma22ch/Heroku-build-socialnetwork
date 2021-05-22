@@ -1,0 +1,57 @@
+
+:root {
+  --orange: #f05945;
+  --orange-light:#f0594567;
+  --vert: #5eaaa8;
+  --vert-light: #aae2e065;
+  --beige: #f7f3e9;
+  --white: #ffffff;
+  --black:#000000;
+  --vert-dark:#426160;
+}
+
+
+.btn{
+  border: none !important;
+}
+.btn:focus{
+  box-shadow:none !important;
+}
+.btn-like{
+  background-color: transparent!important;
+  font-family: "Montserrat";
+  font-weight: bold;
+  border-radius: 5px;
+  color: var(--orange);
+}
+.btn-comment{
+    background-color:  transparent !important;
+    font-family: "Montserrat";
+    font-weight: bold ;
+    border-radius: 5px;
+    color: var(--vert) !important;
+}
+
+.btn-like:hover {
+  background-color: var(--orange-light)!important;
+  font-weight: bold;
+  border-radius: 5px;
+  color: var(--orange)
+}
+.btn-comment:hover{
+  background-color:  var(--vert-light) !important;
+  font-family: "Montserrat";
+  font-weight: "bold";
+  border-radius: "5px";
+  color: var(--vert);
+
+}
+.nameOfuser{
+  font-weight: bold;
+}
+.formControl:focus, .formControl:active{
+  box-shadow:0 0 5px var(--vert) ;
+  border: none;
+}
+
+
