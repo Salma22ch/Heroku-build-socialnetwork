@@ -8,9 +8,12 @@ const chatRoutes = require('./Routes/API/Chat')
 const socketIo = require('socket.io')
 const cors = require('cors')
 const PostsRoute = require('./Routes/API/posts')
+const path = require('path')
 
 // set up express app
 const app = express();
+app.use(express.static(path.join(__dirname, 'Client/build')))
+
 app.use(cookieParser());
 app.use(express.static('public'));
 //use connection to mongodb server
@@ -44,6 +47,10 @@ app.use(UserRoutes);
 app.use('/api/posts/', PostsRoute);
 app.use(chatRoutes)
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/Client/build/index.html'))
+  })
+  
 
 //listen for requests
 let port = process.env.port || 5000;
