@@ -23,7 +23,7 @@ const Login = () => {
         e.preventDefault();
         console.log({ email, password });
         Axios.post(
-            "http://localhost:5000/api/login",
+            "https://peoplebooknetwork.herokuapp.com/api/login",
             {
                 email,
                 password,
@@ -45,7 +45,7 @@ const Login = () => {
         e.preventDefault();
         console.log({ email, password, firstName, lastName });
         Axios.post(
-            "http://localhost:5000/api/register",
+            "https://peoplebooknetwork.herokuapp.com/api/register",
             {
                 email,
                 password,

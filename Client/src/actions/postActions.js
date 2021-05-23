@@ -11,7 +11,7 @@ import {
 // get posts
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/posts`, {withCredentials :true});
+    const res = await axios.get(`https://peoplebooknetwork.herokuapp.com/api/posts`, {withCredentials :true});
     //console.log(res.data.Posts)
 
     dispatch({
@@ -29,7 +29,7 @@ export const getPosts = () => async (dispatch) => {
 // get post
 export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`http://localhost:5000/api/posts/${id}`);
+    const res = await axios.get(`https://peoplebooknetwork.herokuapp.com/api/posts/${id}`);
 
     dispatch({
       type: GET_POST,
@@ -46,7 +46,7 @@ export const getPost = (id) => async (dispatch) => {
 // Add likes
 export const addLike = (infolike) => async (dispatch) => {
   try {
-    const res = await axios.put(`http://localhost:5000/api/posts/like`, infolike , {withCredentials: true});
+    const res = await axios.put(`https://peoplebooknetwork.herokuapp.com/api/posts/like`, infolike , {withCredentials: true});
 
     dispatch({
       type: UPDATE_LIKES,
@@ -63,7 +63,7 @@ export const addLike = (infolike) => async (dispatch) => {
 // Add a post
 export const addPost = (formData) => async (dispatch) => {
   try {
-    const res = await axios.post(`http://localhost:5000/api/posts/`, formData, {withCredentials: true});
+    const res = await axios.post(`https://peoplebooknetwork.herokuapp.com/api/posts/`, formData, {withCredentials: true});
     dispatch({
       type: ADD_POST,
       payload: res.data,
@@ -81,7 +81,7 @@ export const addPost = (formData) => async (dispatch) => {
 export const addComment = (infoComment) => async (dispatch) => {
 
   try {
-    const res = await axios.put(`http://localhost:5000/api/posts/Comment`, infoComment, {withCredentials: true});
+    const res = await axios.put(`https://peoplebooknetwork.herokuapp.com/api/posts/Comment`, infoComment, {withCredentials: true});
 
     dispatch({
       type: ADD_COMMENT,

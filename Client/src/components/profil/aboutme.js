@@ -119,7 +119,7 @@ import axios from "axios";
 
       const formData = new FormData();
       formData.append('myImage',this.state.file);
-      axios.put(`http://localhost:5000/api/user/${this.props.id}/updateImage`,formData,{ withCredentials: true })
+      axios.put(`https://peoplebooknetwork.herokuapp.com/api/user/${this.props.id}/updateImage`,formData,{ withCredentials: true })
             .then((response) => {
                 //alert("The file is successfully uploaded:");
                 window.location.reload()

@@ -22,7 +22,7 @@ export function ConversationsProvider({ id, children }) {
 
   function GetAllMyFriend(idUser) {
     axios
-      .get(`http://localhost:5000/api/user/${idUser}/friends`, { withCredentials: true })
+      .get(`https://peoplebooknetwork.herokuapp.com/api/user/${idUser}/friends`, { withCredentials: true })
       .then((response) => {
         setListOfMyFriends(response.data.friends);
       })
@@ -49,7 +49,7 @@ export function ConversationsProvider({ id, children }) {
   function addMessageToConversation(recipient, message, sender) {
     axios
       .post(
-        `http://localhost:5000/api/privatechat/${sender}`,
+        `https://peoplebooknetwork.herokuapp.com/api/privatechat/${sender}`,
         {
           message: message,
           recipient: recipient,
@@ -86,7 +86,7 @@ export function ConversationsProvider({ id, children }) {
     const sender = id;
     axios
       .get(
-        `http://localhost:5000/api/privatechat/${sender}/${recipient}`, { withCredentials: true }
+        `https://peoplebooknetwork.herokuapp.com/api/privatechat/${sender}/${recipient}`, { withCredentials: true }
       )
       .then((response) => {
         setConversationlist(response.data);

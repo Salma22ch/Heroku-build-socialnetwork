@@ -6,7 +6,7 @@ import {GET_USER, UPDATE_USER , GET_FREINDS , GET_ALLUSERS , ITEMS_LOADING , ADD
 export const getprofil = id => async dispatch => {
 	//dispatch(setItemsLoading());
     try{
-        const res = await axios.get("http://localhost:5000/api/user/"+id, {withCredentials :true})
+        const res = await axios.get("https://peoplebooknetwork.herokuapp.com/api/user/"+id, {withCredentials :true})
         dispatch( {
             type: GET_USER,
             payload: res.data
@@ -24,7 +24,7 @@ export const getprofil = id => async dispatch => {
 export const getUser = id => async dispatch => {
 	//dispatch(setItemsLoading());
     try{
-        const res = await axios.get("http://localhost:5000/api/user/"+id, {withCredentials :true})
+        const res = await axios.get("https://peoplebooknetwork.herokuapp.com/api/user/"+id, {withCredentials :true})
         dispatch( {
             type: GET_USER,
             payload: res.data
@@ -41,7 +41,7 @@ export const getUser = id => async dispatch => {
 export const getAllUsers = () => async dispatch => {
 	dispatch(setItemsLoading());
     try{
-        const res = await axios.get("http://localhost:5000/api/users", {withCredentials :true})
+        const res = await axios.get("https://peoplebooknetwork.herokuapp.com/api/users", {withCredentials :true})
         dispatch( {
             type: GET_ALLUSERS,
             payload: res.data
@@ -58,7 +58,7 @@ export const getAllUsers = () => async dispatch => {
 
 export const updateUser  = (id ,user) => async dispatch => {
     try{
-        const res = await  axios.put('http://localhost:5000/api/user/'+id,user , {withCredentials :true} )
+        const res = await  axios.put('https://peoplebooknetwork.herokuapp.com/api/user/'+id,user , {withCredentials :true} )
         dispatch( {
             type: UPDATE_USER,
             payload: res.data
@@ -76,7 +76,7 @@ export const updateUser  = (id ,user) => async dispatch => {
 export const getfriends = id => async dispatch => {
 	//dispatch(setItemsLoading());
     try{
-        const res = await axios.get("http://localhost:5000/api/user/"+id+"/friends", {withCredentials :true})
+        const res = await axios.get("https://peoplebooknetwork.herokuapp.com/api/user/"+id+"/friends", {withCredentials :true})
         dispatch( {
             type: GET_FREINDS ,
             payload: res.data
@@ -93,7 +93,7 @@ export const getfriends = id => async dispatch => {
 export const addfriend = (id , friend) => async dispatch => {
 	//dispatch(setItemsLoading());
     try{
-        const res = await axios.put("http://localhost:5000/api/user/"+id+"/friends",friend, {withCredentials :true})
+        const res = await axios.put("https://peoplebooknetwork.herokuapp.com/api/user/"+id+"/friends",friend, {withCredentials :true})
         dispatch( {
             type: ADD_FRIEND ,
             payload: res.data
@@ -110,7 +110,7 @@ export const addfriend = (id , friend) => async dispatch => {
 export const removefriend = (id,id_friend) => async dispatch => {
 	//dispatch(setItemsLoading());
     try{
-        const res = await axios.delete("http://localhost:5000/api/user/"+id+"/friend/"+id_friend, {withCredentials :true})
+        const res = await axios.delete("https://peoplebooknetwork.herokuapp.com/api/user/"+id+"/friend/"+id_friend, {withCredentials :true})
         dispatch( {
             type: REMOVE_FRIEND ,
             payload: res.data
@@ -123,16 +123,7 @@ export const removefriend = (id,id_friend) => async dispatch => {
     }
 
 }
-/*export const updateUser =  user  => dispatch =>{
-	axios
-    .put('http://localhost:5000/api/user/608b5f75364b4861c006aa72',user)
-	.then(res=>{
-	   dispatch({
- 		type: UPDATE_USER,
-		payload : res.data
-	   })
-	})
-};*/
+
 
 export const setItemsLoading = () => {
 	return{

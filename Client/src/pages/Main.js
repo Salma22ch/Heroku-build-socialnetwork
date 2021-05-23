@@ -65,7 +65,7 @@ const Main = () => {
     }, [isOpen]);
 
     const logout = () => {
-        Axios.get("http://localhost:5000/api/logout", {
+        Axios.get("https://peoplebooknetwork.herokuapp.com/api/logout", {
             withCredentials: true,
         }).then(() => {
             makeUserOnline(auth.userData.id, false)
@@ -77,7 +77,7 @@ const Main = () => {
 
     function makeUserOnline(id, isOnline) {
 
-        Axios.put(`http://localhost:5000/api/user/${id}/isOnline`,
+        Axios.put(`https://peoplebooknetwork.herokuapp.com/api/user/${id}/isOnline`,
             {
                 isOnline: isOnline,
             },
